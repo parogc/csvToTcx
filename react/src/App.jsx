@@ -61,11 +61,10 @@ function prepareToConvertToXml(val) {
   let Track = [];
   var sum = 0;
   for (let i = 1; i < val.length; i++) {
-    sum = sum + 250;
     Track.push({
       _name: "Trackpoint",
       _content: {
-        Time: moment.unix(val[i].Time / 1000 + sum).toISOString(),
+        Time: moment.unix(val[i].Time / 1000).toISOString(),
         Position: {
           LatitudeDegrees: val[i].LatitudeDegrees,
           LongitudeDegrees: val[i].LongitudeDegrees,
